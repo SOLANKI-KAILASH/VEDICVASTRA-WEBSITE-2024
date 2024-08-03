@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %} Contact |{% endblock title %}
+{% block body %} 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container">
+  <div class="text">
+    <img src="/static/logo1.jpg" class="rounded" width=400 height=200>
+    <img src="/static/contact.jpg" class="rounded" width=500 height=200>  
+    <div>
+    <!-- HTML -->
+<div class="container my-3">
+  <div class="row">
+    <div class="col-md-15 offset-md-0">
+      <div class="card bg-light mb-3" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <div class="card-body">
+          <form method="post" action="/contact">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="firstname">First Name</label>
+              <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter Your First Name" required>
+            </div>
+            <div class="form-group">
+              <label for="lastname">Last Name</label>
+              <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Your Last Name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email Address"id="owner" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number"required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" name="message" placeholder="Enter Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-primary">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock body %}

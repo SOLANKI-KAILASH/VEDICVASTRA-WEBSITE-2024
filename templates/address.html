@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block title %} Checkout |{% endblock title %}
+{% block body %}
+<!-- Checkout Form -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container-fluid my-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h2 class="text-center mb-6">वैदिकवस्त्र VedicVastra Checkout</h2>
+        <form method="post" action="/address">
+          {% csrf_token %}
+          <!-- Address Section -->
+          <h4 class="mb-3">Address</h4>
+          <div class="form-group row">
+            <label for="name" class="col-sm-3 col-form-label">Name</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Full Name"required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="email" class="col-sm-3 col-form-label">Email</label>
+            <div class="col-sm-9">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="address" class="col-sm-3 col-form-label">Address</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="address" name="address" placeholder="Street Address" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="city" class="col-sm-3 col-form-label">City</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="state" class="col-sm-3 col-form-label">State</label>
+            <div class="col-sm-9">
+              <select class="form-control" id="state" name="state" required>
+                <option value="">Select State</option>
+                <option value="AP">Andhra Pradesh</option>
+                <option value="AR">Arunachal Pradesh</option>
+                <option value="AS">Assam</option>
+                <option value="BR">Bihar</option>
+                <option value="CG">Chhattisgarh</option>
+                <option value="GA">Goa</option>
+                <option value="GJ">Gujarat</option>
+                <option value="HR">Haryana</option>
+                <option value="HP">Himachal Pradesh</option>
+                <option value="JK">Jammu and Kashmir</option>
+                <option value="JH">Jharkhand</option>
+                <option value="KA">Karnataka</option>
+                <option value="KL">Kerala</option>
+                <option value="MP">Madhya Pradesh</option>
+                <option value="MH">Maharashtra</option>
+                <option value="MN">Manipur</option>
+                <option value="ML">Meghalaya</option>
+                <option value="MZ">Mizoram</option>
+                <option value="NL">Nagaland</option>
+                <option value="OR">Orissa</option>
+                <option value="PB">Punjab</option>
+                <option value="RJ">Rajasthan</option>
+                <option value="SK">Sikkim</option>
+                <option value="TN">Tamil Nadu</option>
+                <option value="TR">Tripura</option>
+                <option value="UK">Uttarakhand</option>
+                <option value="UP">Uttar Pradesh</option>
+                <option value="WB">West Bengal</option>
+                <option value="AN">Andaman and Nicobar Islands</option>
+                <option value="CH">Chandigarh</option>
+                <option value="DH">Dadra and Nagar Haveli</option>
+                <option value="DD">Daman and Diu</option>
+                <option value="DL">Delhi</option>
+                <option value="LD">Lakshadweep</option>
+                <option value="PY">Pondicherry</option>
+                <!-- Add more states here -->
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="zip" class="col-sm-3 col-form-label">Zip Code</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip Code" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-outline-primary">Save</button>
+          <!-- Add some CSS to make it look better -->
+          <style>
+            .form-group {
+              margin-bottom: 20px;
+            }
+            .form-control {
+              height: 40px;
+              padding: 10px;
+              font-size: 16px;
+            }
+            .col-form-label {
+              padding-top: 10px;
+            }
+            h4 {
+              margin-top: 20px;
+            }
+          </style>
+        </form>
+      </div>
+    </div>
+  </div>
+    {% endblock body %}
